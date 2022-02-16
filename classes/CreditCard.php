@@ -10,7 +10,7 @@ require_once __DIR__ .'/User.php';
     
      public function __construct($name, $surname, $cardnumber, $expiration, $cvv){
          try {
-             $this->name = $name;
+            $this->name = $name;
             $this->surname = $surname;
             $this->cardnumber = $cardnumber;
             $this->expiration = $expiration;
