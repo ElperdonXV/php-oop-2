@@ -8,11 +8,16 @@ class Product{
     protected $description;
 
     public function __construct($name, $id, $price, $quantity, $category){
-        $this->name = $name;
-        $this->id = $id;
-        $this->price = $price;
-        $this->quantity = $quantity;
-        $this->category = $category;
+        try {
+            $this->name = $name;
+            $this->id = $id;
+            $this->price = $price;
+            $this->quantity = $quantity;
+            $this->category = $category;
+        } catch (TypeError $error) {
+            throw new Exception($error->getMessage());
+        }
+        
     }
 
     

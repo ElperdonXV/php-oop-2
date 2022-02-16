@@ -9,11 +9,15 @@ require_once __DIR__ .'/User.php';
     
     
      public function __construct($name, $surname, $cardnumber, $expiration, $cvv){
-        $this->name = $name;
-        $this->surname = $surname;
-        $this->cardnumber = $cardnumber;
-        $this->expiration = $expiration;
-        $this->cvv = $cvv;
+         try {
+             $this->name = $name;
+            $this->surname = $surname;
+            $this->cardnumber = $cardnumber;
+            $this->expiration = $expiration;
+            $this->cvv = $cvv;
+         } catch (TypeError $error) {
+            throw new Exception ($error->getMessage());
+         }
     }
 
     
