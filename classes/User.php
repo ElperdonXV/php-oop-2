@@ -9,11 +9,17 @@ class User{
     protected $age;
 
     public function __construct ($name, $surname, $username, $password, $creditcard){
-    $this->name = $name;
-    $this->surname = $surname;
-    $this->username = $username;
-    $this->password = $password;
-    $this->setCreditCard($creditcard);
+    
+    try{
+        $this->name = $name;
+        $this->surname = $surname;
+        $this->username = $username;
+        $this->password = $password;
+        $this->setCreditCard($creditcard);
+    }
+    catch(TypeError $error){
+        throw new Exception($error->getMessage());
+    }
 }
     public function getName(){
         return $this->name;
