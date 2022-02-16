@@ -100,7 +100,7 @@ class User{
      *
      * @return  self
      */ 
-    public function setCreditcard($creditcard)
+    public function setCreditcard(CreditCard $creditcard)
     {
         $this->creditcard = $creditcard;
 
